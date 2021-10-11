@@ -1,0 +1,87 @@
+Git Lab Tutorials: 
+10/11/21
+
+GitHub Account:
+Roughly 9/20/21
+
+
+1. Paste the console output you saved at the end of step 3.C 
+	$ git commit -m"Created docs folder and status.txt file"
+	[master fa15412] Created docs folder and status.txt file
+	 1 file changed, 15 insertions(+)
+	 create mode 100644 docs/status.txt
+	 
+	 $ git push
+	Enumerating objects: 9, done.
+	Counting objects: 100% (9/9), done.
+	Delta compression using up to 8 threads
+	Compressing objects: 100% (6/6), done.
+	Writing objects: 100% (8/8), 921 bytes | 460.00 KiB/s, done.
+	Total 8 (delta 2), reused 1 (delta 0), pack-reused 0
+	remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+	To https://github.com/Cpoly02/assignment2.git
+	   ea720ad..f231f6f  master -> master
+
+
+2. How many commits have been done to the repository (not only by you, but by anyone) so far? 
+Write the git command you used to get this information 
+	$ git shortlog -s
+		 4  Cpoly02
+		 6  Esteban Parra
+
+
+3. When was the README.md file modified last? 
+Write the git command you used to get this information 
+	$ git log -1 --pretty="format:%ci" README.md
+	2021-10-11 17:50:18 -0400
+
+
+4. Mention two reasons why branches are used in a Git repository 
+	i) A branch is created so you can work on a repository without affecting the main branch. 
+		This allows multiple branches to be worked on without interferring with one another. 
+		
+	ii) Having multiple branches allows for version control of the software. It helps with organization. 
+	
+
+5. What is the difference between git log and git status? 
+	A git log shows the previous commits to the Git repository. The git status shows 
+	the current changes to the repository that has not yet been committed. 
+
+
+6. What command would you use to see the commits where “Vehicle.h” was one of the committed files? 
+	$ git log --follow Vehicle.h
+
+
+7. What command would you use to see the commits whose commit message contains the word “file”
+	$ git log --grep=file
+
+
+8. In the context of object-oriented programming 
+	(I) What is inheritance? 
+		Inheritance is where classes called "child" classes are derived from "parent" classes. These
+		child classes are similar to and can use the features of the parent class. 
+		
+	(II) What is polymorphism? 
+		Polymorphism is the concept that multiple classes can be used with the same interface. 
+	
+	(III) What is encapsulation?
+		Encapulation secures the data inside the class by limited those that can access it. This is done
+		by labeling the values in the class as public, private, protected, etc. 
+		
+		
+9.  What is the main difference between the “Dictator and Lieutenants” workflow and the
+“Integration manager” workflow? 
+	In the integration manager workflow, every developer has their own public repository that 
+	they are allow to push and pull from, which is then accessed by the integration manager and 
+	sent to the main repository. The dictator and lieutenants workflow only has one main repository
+	that the developers pull from and is only pushed to by the dictator. It is a heirarchy of developers
+	where each step in the heirarchy keeps track of the ones below them instead of 1 manager keeping up
+	with every individual's repository. 
+
+
+10. How would a team of 100 developers benefit from following the “Dictator and Lieutenants” 
+workflow instead of the “Centralized” workflow? 
+	The dictator and lieutenants workflow allows for a more structured development process
+	than the centralized workflow. If 100 developers were working on the same repository
+	at the same time, it be chaotic trying to maintain and understand the code. The D&L workflow
+	filters the work and creates a much more managable system. 
